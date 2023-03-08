@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/joshjudkins/Downloads/Winter 2023 Jr Core/IS413/Mission09/Mission09/Mission09.csproj": {}
+    "/Users/joshjudkins/Desktop/Mission09/Mission09/Mission09.csproj": {}
   },
   "projects": {
-    "/Users/joshjudkins/Downloads/Winter 2023 Jr Core/IS413/Mission09/Mission09/Mission09.csproj": {
+    "/Users/joshjudkins/Desktop/Mission09/Mission09/Mission09.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/joshjudkins/Downloads/Winter 2023 Jr Core/IS413/Mission09/Mission09/Mission09.csproj",
+        "projectUniqueName": "/Users/joshjudkins/Desktop/Mission09/Mission09/Mission09.csproj",
         "projectName": "Mission09",
-        "projectPath": "/Users/joshjudkins/Downloads/Winter 2023 Jr Core/IS413/Mission09/Mission09/Mission09.csproj",
+        "projectPath": "/Users/joshjudkins/Desktop/Mission09/Mission09/Mission09.csproj",
         "packagesPath": "/Users/joshjudkins/.nuget/packages/",
-        "outputPath": "/Users/joshjudkins/Downloads/Winter 2023 Jr Core/IS413/Mission09/Mission09/obj/",
+        "outputPath": "/Users/joshjudkins/Desktop/Mission09/Mission09/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/joshjudkins/.nuget/NuGet/NuGet.Config"
