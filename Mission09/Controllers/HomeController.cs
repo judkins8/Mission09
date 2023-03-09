@@ -1,10 +1,7 @@
-﻿using Mission09.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Mission09.Models;
 using Mission09.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mission09.Controllers
 {
@@ -12,30 +9,36 @@ namespace Mission09.Controllers
     {
         private IBookstoreRepository repo;
 
-        public HomeController(IBookstoreRepository temp)
+        public HomeController(IBookstoreRepository br)
         {
-            repo = temp;
+            repo = br;
         }
-        public IActionResult Index(int pageNum = 1)
+        public IActionResult Index(string bookCategory, int pageNum = 1)
         {
+            // set number of books to be displayed on one page
             int pageSize = 10;
 
-            var x = new BooksViewModel
+            var bvm = new BooksViewModel
             {
+                // query the books based on title, page number, and page size
                 Books = repo.Books
+                .Where(p => (p.Category == bookCategory) || (bookCategory == null))
                 .OrderBy(p => p.Title)
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks =
+                    (bookCategory == null
+                        ? repo.Books.Count()
+                        : repo.Books.Where(x => x.Category == bookCategory).Count()),
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }
             };
 
-            return View(x);
+            return View(bvm);
         }
     }
 }

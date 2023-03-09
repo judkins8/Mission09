@@ -11,10 +11,11 @@ namespace Mission09.Models
     {
         private BookstoreContext context { get; set; }
 
-        public EFBookstoreRepository(BookstoreContext temp)
+        public EFBookstoreRepository(BookstoreContext bc)
         {
-            context = temp;
+            context = bc;
         }
+
         public IQueryable<Books> Books => context.Books;
     }
 }

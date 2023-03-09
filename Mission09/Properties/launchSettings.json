@@ -18,7 +18,7 @@
     "Mission09": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:28605",
+      "applicationUrl": "http://localhost:8531",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

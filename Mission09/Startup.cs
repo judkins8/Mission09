@@ -1,15 +1,10 @@
-﻿using Mission09.Models;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Mission09.Models;
 
 namespace Mission09
 {
@@ -20,9 +15,9 @@ namespace Mission09
 
         public IConfiguration Configuration { get; set; }
 
-        public Startup(IConfiguration temp)
+        public Startup(IConfiguration config)
         {
-            Configuration = temp;
+            Configuration = config;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -35,6 +30,11 @@ namespace Mission09
             });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,13 +45,25 @@ namespace Mission09
                 app.UseDeveloperExceptionPage();
             }
 
+            // corresponds to wwwroot folder
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("categorypage", "{bookCategory}/Page{pageNum}", new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("Paging", "Page{pageNum}", new { Controller = "Home", action = "Index", pageNum = 1 });
+
+
+                endpoints.MapControllerRoute("category", "{bookCategory}", new { Controller = "Home", action = "Index", pageNum = 1 });
+
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
         }
     }

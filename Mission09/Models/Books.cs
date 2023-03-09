@@ -12,7 +12,7 @@ namespace Mission09.Models
     {
         [Key]
         [Required]
-        public int BookId { get; set; }
+        public long BookId { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
@@ -26,8 +26,13 @@ namespace Mission09.Models
         [Required]
         public string Category { get; set; }
         [Required]
-        public int PageCount { get; set; }
+        public long PageCount { get; set; }
         [Required]
         public double Price { get; set; }
+
+        internal object Where(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
