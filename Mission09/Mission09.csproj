@@ -17,6 +17,8 @@
     <None Remove="Pages\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Categories\" />
+    <None Remove="Views\Purchase\" />
+    <None Remove="Views\Shared\Components\CartSummary\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -35,6 +37,8 @@
     <Folder Include="wwwroot\lib\twitter-bootstrap\" />
     <Folder Include="wwwroot\lib\twitter-bootstrap\js\" />
     <Folder Include="wwwroot\lib\twitter-bootstrap\css\" />
+    <Folder Include="Views\Purchase\" />
+    <Folder Include="Views\Shared\Components\CartSummary\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

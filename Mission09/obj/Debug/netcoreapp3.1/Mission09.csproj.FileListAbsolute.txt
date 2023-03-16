@@ -164,3 +164,6 @@
 /Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Pages/_ViewStart.cshtml.g.cs
 /Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Views/Shared/BookSummary.cshtml.g.cs
 /Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Categories/Default.cshtml.g.cs
+/Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Pages/PurchaseConfirmation.cshtml.g.cs
+/Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Views/Purchase/Checkout.cshtml.g.cs
+/Users/joshjudkins/Desktop/Mission09/Mission09/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/CartSummary/Default.cshtml.g.cs
